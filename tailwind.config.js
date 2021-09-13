@@ -1,28 +1,89 @@
 module.exports = {
   purge: {
       content: [
-          './src/pages/**/*.{js,ts,jsx,tsx}', 
-          './src/components/**/*.{js,ts,jsx,tsx}'
+          "./src/pages/**/*.{js,ts,jsx,tsx}", 
+          "./src/components/**/*.{js,ts,jsx,tsx}"
       ]
   }, 
   darkMode: false,
   theme: {
     backgroundColor: theme => ({
-     ...theme('colors'),
-     'primary-color': '#56cfe1',
-     'primary-color-hover': '#4ea8de',
-     'secondary-color': '#4ea8de',
-     'light-color': '#f7f7f7',
-     'secondary-light-color': '#f0ffff',
-     'dark-color': '#3f3f3f',
-     'secondary-dark-color': '#737380',
+     ...theme("colors"),
+     "primary-color": "#56CFE1",
+     "secondary-color": "#4EA8DE",
+     "light-color": "#F7F7F7",
+     "secondary-light-color": "#F0FFFF",
+     "dark-color": "#3F3F3F",
+     "secondary-dark-color": "#737380",
     }),
     textColor: theme => ({
-      ...theme('colors'),
-      'light-color': '#f7f7f7',
-      'primary-color': '#56cfe1',
-      'primary-color-hover': '#4ea8de',
-    })
+      ...theme("colors"),
+      "light-color": "#F7F7F7",
+      "primary-color": "#56CFE1",
+      "secondary-color": "#4EA8DE",
+      "dark-color": "#737380",
+    }),
+    extend: {
+        animation: {
+          "fade-down": 'fadeDown 1s ease-in-out',
+          "fade-up": 'fadeUp 1s ease-in-out',
+          "fade-left": 'fadeLeft 1s',
+          "fade-right": 'fadeRight 1s',
+          "fade-in": 'fadeIn 3s',
+          "fade-in-fast": 'fadeIn 1s'
+        },
+        // that is actual animation
+        keyframes: theme => ({
+            fadeDown: {
+                "0%": {
+                    "opacity": "0", 
+                    "transform": "translateY(-25%)",
+                },
+                "100%": {
+                    "opacity": "1",
+                    "transform": "translateY(0)",
+                }    
+            },
+            fadeUp: {
+                "0%": {
+                    "opacity": "0", 
+                    "transform": "translateY(25%)",
+                },
+                "100%": {
+                    "opacity": "1",
+                    "transform": "translateY(0)",
+                }    
+            },
+            fadeLeft: {
+                "0%": {
+                    "opacity": "0",
+                    "transform": "translateX(-25%)"
+                 },
+                 "100%": {
+                    "opacity": "1",
+                    "transform": "translateX(0)"
+                 }
+            },
+            fadeRight: {
+                "0%": {
+                    "opacity": "0",
+                    "transform": "translateX(-25%)"
+                 },
+                 "100%": {
+                    "opacity": "1",
+                    "transform": "translateX(0)"
+                 }
+            },
+            fadeIn: {
+                "0%": {
+                    "opacity":"0"
+                },
+                "100%": {
+                    "opacity":"1"
+                }
+            }
+        }),
+      },
   },
   variants: {
   extend: {},

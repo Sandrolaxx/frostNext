@@ -3,9 +3,7 @@
 html, body {
     margin: 0;
     padding: 0;
-}
-
-body {
+    background-color: #f7f7f7;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -35,17 +33,6 @@ form textarea {
     border-radius:  8px;
     padding: 16px 24px;
     line-height: 24px;
-}
-
-.back-link {
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
-    color: #41414d;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.2s;
 }
 
 a {

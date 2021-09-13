@@ -1,44 +1,50 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import logo from '../assets/icons/logo.png';
-import Button from './Button';
+import Image from "next/image";
+import Link from "next/link";
+import logo from "../assets/icons/logo.png";
+import Button from "./Button";
 
-export default function Header() {
-  return (
-    <nav className={`
-        flex items-center justify-between 
-        h-20 bg-primary-color
-    `}>
-      <div className="h-20 ml-20 flex items-center">
-        <Link href='/' >
-          <Image src={logo} alt="DonaFrost Logo" className="cursor-pointer"
-            width={40} height={40} />
-        </Link>
-        <Link href='/' >
-          <div className={`
-              ml-4 font-semibold cursor-pointer 
-              text-2xl text-light-color tracking-tight 
-          `} >
-            DonaFrost
-          </div>
-        </Link>
-      </div>
-      <div className="flex h-20 mr-20 items-center flex-row">
-        <Link href='/register'  >
-          <Button textColor="primary-color-hover" color="light-color" >
-            CADASTRAR-SE
-          </Button>
-        </Link>
-        <Link href='/sign' >
-          <div className={`
-              ml-4 font-semibold cursor-pointer text-lg
-              text-light-color  tracking-tight 
-              hover:text-primary-color-hover
-          `}>
-            ENTRAR
-          </div>
-        </Link>
-      </div>
-    </nav>
-  );
+interface headerProps{
+    animate?: boolean;
+}
+
+export default function Header(props: headerProps) {
+    const animate = props.animate;
+    
+    return (
+        <header className={`
+            flex items-center justify-between 
+            bg-primary-color h-20 animate-${animate ? "fade-down" : "none"}
+        `}>
+            <div className="p-20 pl-24 flex items-center">
+                <Link href="/" >
+                    <Image src={logo} alt="DonaFrost Logo" className="cursor-pointer"
+                        width={45} height={45} quality={100} />
+                </Link>
+                <Link href="/" >
+                    <div className={`
+                        ml-2 font-semibold cursor-pointer 
+                        text-2xl text-light-color tracking-tight 
+                    `} >
+                        DonaFrost
+                    </div>
+                </Link>
+            </div>
+            <div className="flex h-20 mr-20 items-center flex-row">
+                <Link href="/register"  >
+                    <Button textColor="secondary-color" color="light-color" >
+                        CADASTRAR-SE
+                    </Button>
+                </Link>
+                <Link href="/sign" >
+                    <div className={`
+                        ml-4 font-medium cursor-pointer text-xl
+                      text-light-color  tracking-tight 
+                      hover:text-secondary-color
+                    `}>
+                        ENTRAR
+                    </div>
+                </Link>
+            </div>
+        </header>
+    );
 }
