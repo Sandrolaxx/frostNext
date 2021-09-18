@@ -5,7 +5,7 @@ module.exports = {
           "./src/components/**/*.{js,ts,jsx,tsx}"
       ]
   }, 
-  darkMode: false,
+  darkMode: "class",
   theme: {
     backgroundColor: theme => ({
      ...theme("colors"),
@@ -30,9 +30,9 @@ module.exports = {
           "fade-left": 'fadeLeft 1s',
           "fade-right": 'fadeRight 1s',
           "fade-in": 'fadeIn 3s',
+          "fade-out": 'fadeOut 3s',
           "fade-in-fast": 'fadeIn 1s'
         },
-        // that is actual animation
         keyframes: theme => ({
             fadeDown: {
                 "0%": {
@@ -80,6 +80,14 @@ module.exports = {
                 },
                 "100%": {
                     "opacity":"1"
+                }
+            },
+            fadeOut: {
+                "0%": {
+                    "opacity":"1"
+                },
+                "100%": {
+                    "opacity":"0"
                 }
             }
         }),

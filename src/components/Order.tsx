@@ -29,6 +29,6 @@ export default function Order() {
                 onSelectProduct={handleSelectProduct}
                 selectedProducts={selectedProducts}
             />
-        </div>
+        </div >
     );
 }
