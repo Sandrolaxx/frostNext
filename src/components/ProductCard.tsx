@@ -1,4 +1,4 @@
-import { Product } from "../types";
+import { PlateSize, Product } from "../types";
 import { formatPrice } from "./utils/helpers";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 interface Props {
     product: Product;
     onSelectProduct: (product: Product) => void;
-    plateSize: "INDIVIDUAL" | "THREE_PEOPLE";
+    plateSize: PlateSize;
     isSelected: boolean;
 }
 
 export default function ProductCard({ product, onSelectProduct,
     isSelected, plateSize }: Props) {
 
-    const isPlateSizeIndividual = plateSize === "INDIVIDUAL";
+    const isPlateSizeIndividual = plateSize === PlateSize.INDIVIDUAL;
 
     return (
         <>
@@ -78,6 +78,9 @@ export default function ProductCard({ product, onSelectProduct,
                         <span className="font-bold text-2xl leading-6 text-primary-color mt-auto">
                             {formatPrice(product.price)}
                         </span>
+                    </div>
+                    <div>
+                        {product.categoryList.at(0)}
                     </div>
                 </div>
             </motion.div>

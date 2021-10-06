@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Product } from "../types";
+import { PlateSize, Product } from "../types";
 import ProductCard from "./ProductCard";
 import { checkIsSelected } from "./utils/helpers";
 
@@ -10,15 +10,15 @@ interface Props {
 }
 
 export default function ProductsList({ products, onSelectProduct, selectedProducts }: Props) {
-    const [plateSize, setPlateSize] = useState<"INDIVIDUAL" | "THREE_PEOPLE">("INDIVIDUAL");
-    const isPlateSizeIndividual = plateSize === "INDIVIDUAL";
+    const [plateSize, setPlateSize] = useState<PlateSize>(PlateSize.INDIVIDUAL);
+    const isPlateSizeIndividual = plateSize === PlateSize.INDIVIDUAL;
 
     function handlePlateSize() {
 
         if (isPlateSizeIndividual) {
-            setPlateSize("THREE_PEOPLE");
+            setPlateSize(PlateSize.THREE_PEOPLE);
         } else {
-            setPlateSize("INDIVIDUAL");
+            setPlateSize(PlateSize.INDIVIDUAL);
         }
 
     }
@@ -42,7 +42,8 @@ export default function ProductsList({ products, onSelectProduct, selectedProduc
             </div>
 
             <div className="flex  flex-wrap justify-center mt-0 mb-0 ml-20 mr-20 pb-12">
-                {products.filter(isPlateSizeIndividual ? p => p.plateSize === "INDIVIDUAL" : p => p.plateSize === "THREE_PEOPLE")
+                {products.filter(isPlateSizeIndividual ? p => p.plateSize === PlateSize.INDIVIDUAL 
+                                    : p => p.plateSize === PlateSize.THREE_PEOPLE)
                     .map(product => (
                         <ProductCard
                             key={product.id}

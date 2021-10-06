@@ -5,7 +5,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857708-18bbe480-58f9-11eb-8919-5efc7da68b5a.png",
         "name": "BIFE À PARMEGIANA",
         "price": 9.50,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857711-1bb6d500-58f9-11eb-8124-898e702d86fc.png",
         "name": "LASANHA ITALIANA",
         "price": 8.00,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857712-1c4f6b80-58f9-11eb-8fa5-3b922d808e18.png",
         "name": "LASANHA DE CALABRESA",
         "price": 8.50,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857713-1c4f6b80-58f9-11eb-8c5f-aa5196b1cb9a.png",
         "name": "LASANHA À PARMEGIANA",
         "price": 8.00,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857714-1ce80200-58f9-11eb-974f-950c535b5e96.png",
         "name": "GALINHA À SILVERMOON",
         "price": 9.00,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857715-1d809880-58f9-11eb-95ee-e3e000b70e63.png",
         "name": "SALADA DA CHEF",
         "price": 7.00,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857716-1e192f00-58f9-11eb-95cf-78cdeb0e0ed3.png",
         "name": "BIFE À PARMEGIANA",
         "price": 12.00,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857717-1eb1c580-58f9-11eb-843f-29ae70df062d.png",
         "name": "LASANHA DE CALABRESA",
         "price": 8.00,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857713-1c4f6b80-58f9-11eb-8c5f-aa5196b1cb9a.png",
         "name": "SALADA DA CHEF",
         "price": 8.50,
-        "plateSize": "INDIVIDUAL"
+        "plateSize": "INDIVIDUAL",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 10,
@@ -77,7 +86,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857708-18bbe480-58f9-11eb-8919-5efc7da68b5a.png",
         "name": "BIFE À PARMEGIANA",
         "price": 12.50,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 11,
@@ -85,7 +95,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857711-1bb6d500-58f9-11eb-8124-898e702d86fc.png",
         "name": "LASANHA ITALIANA",
         "price": 13.00,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 12,
@@ -93,7 +104,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857712-1c4f6b80-58f9-11eb-8fa5-3b922d808e18.png",
         "name": "LASANHA DE CALABRESA",
         "price": 12.00,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 13,
@@ -101,7 +113,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857713-1c4f6b80-58f9-11eb-8c5f-aa5196b1cb9a.png",
         "name": "LASANHA À PARMEGIANA",
         "price": 14.00,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 14,
@@ -109,7 +122,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857714-1ce80200-58f9-11eb-974f-950c535b5e96.png",
         "name": "GALINHA À SILVERMOON",
         "price": 11.50,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 15,
@@ -117,7 +131,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857715-1d809880-58f9-11eb-95ee-e3e000b70e63.png",
         "name": "SALADA DA CHEF",
         "price": 12.00,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 16,
@@ -125,7 +140,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857716-1e192f00-58f9-11eb-95cf-78cdeb0e0ed3.png",
         "name": "BIFE À PARMEGIANA",
         "price": 12.00,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 17,
@@ -133,7 +149,8 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857717-1eb1c580-58f9-11eb-843f-29ae70df062d.png",
         "name": "LASANHA DE CALABRESA",
         "price": 12.50,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     },
     {
         "id": 18,
@@ -141,6 +158,7 @@
         "imageUri": "https://user-images.githubusercontent.com/61207420/104857713-1c4f6b80-58f9-11eb-8c5f-aa5196b1cb9a.png",
         "name": "SALADA DA CHEF",
         "price": 10.50,
-        "plateSize": "THREE_PEOPLE"
+        "plateSize": "THREE_PEOPLE",
+        "categoryList": ["LOW_CARB", "TRANS_FATS_FREE", "HIGH_PROTEIN"]
     }
 ]
