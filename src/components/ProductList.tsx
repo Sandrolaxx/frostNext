@@ -14,13 +14,8 @@ export default function ProductsList({ products, onSelectProduct, selectedProduc
     const isPlateSizeIndividual = plateSize === PlateSize.INDIVIDUAL;
 
     function handlePlateSize() {
-
-        if (isPlateSizeIndividual) {
-            setPlateSize(PlateSize.THREE_PEOPLE);
-        } else {
-            setPlateSize(PlateSize.INDIVIDUAL);
-        }
-
+        isPlateSizeIndividual ? setPlateSize(PlateSize.THREE_PEOPLE) 
+            : setPlateSize(PlateSize.INDIVIDUAL);
     }
 
     return (

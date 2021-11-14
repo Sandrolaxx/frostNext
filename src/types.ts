@@ -4,23 +4,23 @@ export type Product = {
     price: number;
     description: string;
     imageUri: string;
-    plateSize: PlateSize | string;
-    categoryList: string[] | PlateCategory[];
+    plateSize: PlateSize;
+    categoryList: PlateCategory[];
 }
 
 export enum PlateSize {
-"INDIVIDUAL",
-    "THREE_PEOPLE"
+    INDIVIDUAL = "INDIVIDUAL",
+    THREE_PEOPLE = "THREE_PEOPLE"
 }
 
 export enum PlateCategory {
-    LOW_CARB = "Low Carb",    
-    TRANS_FATS_FREE = "Sem Gorduras Trans",
-    LACTOSE_FREE = "Sem Lactose",
-    HIGH_PROTEIN = "Rico em Proteína",    
-    NO_GLUTEN = "Sem Glúten",    
-    VEGAN = "Vegano",
-    VEGETARIAN = "Vegetariano" 
+    LOW_CARB = "LOW_CARB",    
+    TRANS_FATS_FREE = "TRANS_FATS_FREE",
+    LACTOSE_FREE = "LACTOSE_FREE",
+    HIGH_PROTEIN = "HIGH_PROTEIN",    
+    NO_GLUTEN = "NO_GLUTEN",    
+    VEGAN = "VEGAN",
+    VEGETARIAN = "VEGETARIAN" 
 }
 
 export type OrderLocationData = {

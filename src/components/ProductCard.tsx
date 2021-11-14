@@ -1,5 +1,5 @@
 import { PlateSize, Product } from "../types";
-import { formatPrice } from "./utils/helpers";
+import { formatPrice, returnInitialFromEnumPlateCategory, returnStrFromEnumPlateCategory } from "./utils/helpers";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -12,12 +12,12 @@ interface Props {
 
 export default function ProductCard({ product, onSelectProduct,
     isSelected, plateSize }: Props) {
-
     const isPlateSizeIndividual = plateSize === PlateSize.INDIVIDUAL;
 
     return (
         <>
-            <motion.div
+            <motion.div 
+                id={product.id.toString()}
                 initial={{ rotateY: isPlateSizeIndividual ? 180 : 0 }}
                 animate={{ rotateY: isPlateSizeIndividual ? 0 : 180 }}
                 transition={{ duration: 0.500 }}
@@ -30,7 +30,7 @@ export default function ProductCard({ product, onSelectProduct,
             >
                 <div className="flex items-start justify-center">
                     <div className="mr-4">
-                        <h1 className="font-bold text-2xl leading-6 text-secondary-color">
+                        <h1 className="font-bold text-xl leading-6 text-secondary-color">
                             {product.name}
                         </h1>
                         <Image src={product.imageUri}
@@ -40,7 +40,21 @@ export default function ProductCard({ product, onSelectProduct,
                             alt={product.name} />
                     </div>
                     <div className="flex flex-col h-full">
-                        <p className="text-gray-700">
+                        <div className="flex flex-row mt-1 items-center justify-between">
+                            <div>
+                                {product.categoryList.map(category => {
+                                    return (
+                                        <button type="button" id={category} title={returnStrFromEnumPlateCategory(category)}
+                                            className="w-8 h-8 text-base rounded-full text-gray-800 bg-transparent border-2 border-blue-400">
+                                            <span className="p-1" >
+                                                {returnInitialFromEnumPlateCategory(category)}
+                                            </span>
+                                        </button>)
+                                })}
+                            </div>
+                            <li className="text-blue-400">100g</li>
+                        </div>
+                        <p className="text-gray-700 mt-2">
                             {product.description}
                         </p>
                         <span className="font-bold text-2xl leading-6 text-primary-color mt-auto">
@@ -72,15 +86,26 @@ export default function ProductCard({ product, onSelectProduct,
                             alt={product.name} />
                     </div>
                     <div className="flex flex-col h-full">
+                        <div className="flex flex-row mt-1 items-center justify-between">
+                            <div>
+                                {product.categoryList.map(category => {
+                                    return (
+                                        <button type="button" id={category} title={returnStrFromEnumPlateCategory(category)}
+                                            className="w-8 h-8 text-base rounded-full text-gray-800 bg-transparent border-2 border-blue-400">
+                                            <span className="p-1" >
+                                                {returnInitialFromEnumPlateCategory(category)}
+                                            </span>
+                                        </button>)
+                                })}
+                            </div>
+                            <li className="text-blue-400">100g</li>
+                        </div>
                         <p className="text-gray-700">
                             {product.description}
                         </p>
                         <span className="font-bold text-2xl leading-6 text-primary-color mt-auto">
                             {formatPrice(product.price)}
                         </span>
-                    </div>
-                    <div>
-                        {product.categoryList.at(0)}
                     </div>
                 </div>
             </motion.div>
