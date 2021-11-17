@@ -24,6 +24,12 @@ module.exports = {
       "dark-color": "#737380",
     }),
     extend: {
+        height: {
+            "98": "470px",
+            "100": "480px",
+            "102": "520px",
+            "104": "580px",
+        },
         animation: {
           "fade-down": 'fadeDown 1s ease-in-out',
           "fade-up": 'fadeUp 1s ease-in-out',

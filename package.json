@@ -9,20 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/react-lottie": "^1.2.6",
-    "@types/react-select": "^5.0.1",
     "axios": "^0.22.0",
     "framer-motion": "^4.1.17",
     "leaflet": "^1.7.1",
+    "leaflet-defaulticon-compatibility": "^0.1.1",
+    "leaflet-geosearch": "^3.6.0",
     "next": "11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-leaflet": "^3.2.2",
     "react-lottie": "^1.2.3",
     "react-select": "^5.2.1"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.7.5",
     "@types/react": "17.0.19",
+    "@types/react-lottie": "^1.2.6",
+    "@types/react-select": "^5.0.1",
     "autoprefixer": "^10.3.4",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",

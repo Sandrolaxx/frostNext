@@ -16,13 +16,13 @@ export default function Header(props: headerProps) {
             bg-primary-color h-20 animate-${animate ? "fade-down" : "none"}
         `}>
             <div className="p-20 pl-24 flex items-center">
-                <Link href="/" >
+                <Link href="/">
                     <Image src={logo} alt="DonaFrost Logo" className="cursor-pointer"
                         width={45} height={45} quality={100} />
                 </Link>
-                <Link href="/" >
+                <Link href="/">
                     <div className={`
-                        ml-2 font-semibold cursor-pointer 
+                        ml-2 font-medium cursor-pointer 
                         text-2xl text-light-color tracking-tight 
                     `} >
                         DonaFrost
@@ -30,12 +30,12 @@ export default function Header(props: headerProps) {
                 </Link>
             </div>
             <div className="flex h-20 mr-20 items-center flex-row">
-                <Link href="/register"  >
+                <Link href="/register">
                     <Button textColor="secondary-color" color="light-color" >
-                        CADASTRAR-SE
+                        CADASTRE-SE
                     </Button>
                 </Link>
-                <Link href="/sign" >
+                <Link href="/login">
                     <div className={`
                         ml-4 font-medium cursor-pointer text-xl
                       text-light-color  tracking-tight 

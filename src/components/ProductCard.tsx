@@ -16,8 +16,8 @@ export default function ProductCard({ product, onSelectProduct,
 
     return (
         <>
-            <motion.div 
-                id={product.id.toString()}
+            <motion.div
+                key={product.id}
                 initial={{ rotateY: isPlateSizeIndividual ? 180 : 0 }}
                 animate={{ rotateY: isPlateSizeIndividual ? 0 : 180 }}
                 transition={{ duration: 0.500 }}
@@ -64,6 +64,7 @@ export default function ProductCard({ product, onSelectProduct,
                 </div>
             </motion.div>
             <motion.div
+                key={product.id}
                 initial={{ rotateY: isPlateSizeIndividual ? 0 : 180 }}
                 animate={{ rotateY: isPlateSizeIndividual ? 180 : 0 }}
                 transition={{ duration: 0.500 }}
@@ -76,7 +77,7 @@ export default function ProductCard({ product, onSelectProduct,
             >
                 <div className={"flex items-start justify-center"}>
                     <div className="mr-4">
-                        <h1 className="font-bold text-2xl leading-6 text-secondary-color">
+                        <h1 className="font-bold text-xl leading-6 text-secondary-color">
                             {product.name}
                         </h1>
                         <Image src={product.imageUri}
@@ -98,7 +99,7 @@ export default function ProductCard({ product, onSelectProduct,
                                         </button>)
                                 })}
                             </div>
-                            <li className="text-blue-400">100g</li>
+                            <li className="text-blue-400">350g</li>
                         </div>
                         <p className="text-gray-700">
                             {product.description}
