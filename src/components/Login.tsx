@@ -1,19 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import frostLove from "../assets/images/dona-frost-login.svg";
 import Button from "./Button";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const inputRef = useRef(null);
 
     const active = true;
     const main = true;
 
     function handleRegister() {
-
-
         try {
             // login(newUser);
         } catch (err) {
@@ -22,7 +21,8 @@ export default function Login() {
     }
 
     return (
-        <div className="flex flex-col items-center m-auto bg-secondary-light-color rounded-xl shadow-2xl animate-fade-in">
+        <div className="flex flex-col items-center m-auto bg-secondary-light-color rounded-xl shadow-2xl animate-fade-in"
+            ref={inputRef}>
             <p className="text-3xl m-4 text-gray-600 font-bold">
                 Prove DonaFrost e se apaixone.
             </p>

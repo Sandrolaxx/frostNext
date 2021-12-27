@@ -1,4 +1,3 @@
-
 export default function StepsHeader() {
     return (
         <header className='flex justify-center mb-7'>

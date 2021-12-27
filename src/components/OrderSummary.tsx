@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { formatPrice } from "./utils/helpers";
+import { formatPrice } from "../utils/helpers";
 
 interface Props {
     amount: number,

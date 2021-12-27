@@ -1,5 +1,5 @@
 import { PlateSize, Product } from "../types";
-import { formatPrice, returnInitialFromEnumPlateCategory, returnStrFromEnumPlateCategory } from "./utils/helpers";
+import { formatPrice, returnInitialFromEnumPlateCategory, returnStrFromEnumPlateCategory } from "../utils/helpers";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -16,6 +16,7 @@ export default function ProductCard({ product, onSelectProduct,
 
     return (
         <>
+            {isPlateSizeIndividual ?
             <motion.div
                 key={product.id}
                 initial={{ rotateY: isPlateSizeIndividual ? 180 : 0 }}
@@ -28,7 +29,7 @@ export default function ProductCard({ product, onSelectProduct,
                     `}
                 onClick={() => onSelectProduct(product)}
             >
-                <div className="flex items-start justify-center">
+                <div className="flex items-start justify-center" key={product.id}>
                     <div className="mr-4">
                         <h1 className="font-bold text-xl leading-6 text-secondary-color">
                             {product.name}
@@ -63,6 +64,7 @@ export default function ProductCard({ product, onSelectProduct,
                     </div>
                 </div>
             </motion.div>
+            : 
             <motion.div
                 key={product.id}
                 initial={{ rotateY: isPlateSizeIndividual ? 0 : 180 }}
@@ -75,7 +77,7 @@ export default function ProductCard({ product, onSelectProduct,
                     `}
                 onClick={() => onSelectProduct(product)}
             >
-                <div className={"flex items-start justify-center"}>
+                <div className={"flex items-start justify-center"} key={product.id}>
                     <div className="mr-4">
                         <h1 className="font-bold text-xl leading-6 text-secondary-color">
                             {product.name}
@@ -110,6 +112,7 @@ export default function ProductCard({ product, onSelectProduct,
                     </div>
                 </div>
             </motion.div>
+            }
         </>
     );
 }

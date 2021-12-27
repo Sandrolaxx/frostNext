@@ -4,8 +4,8 @@ import OrderLocation from "./OrderLocation";
 import OrderSummary from "./OrderSummary";
 import ProductsList from "./ProductList";
 import StepsHeader from "./StepsHeader";
-import { checkIsSelected, validateOrder } from "./utils/helpers";
-import { fetchProducts, saveOrder } from "./utils/restClient";
+import { checkIsSelected, validateOrder } from "../utils/helpers";
+import { fetchProducts, saveOrder } from "../utils/restClient";
 
 export default function Order() {
 

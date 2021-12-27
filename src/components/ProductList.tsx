@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PlateSize, Product } from "../types";
 import ProductCard from "./ProductCard";
-import { checkIsSelected } from "./utils/helpers";
+import { checkIsSelected } from "../utils/helpers";
 
 interface Props {
     products: Product[];
@@ -14,8 +14,7 @@ export default function ProductsList({ products, onSelectProduct, selectedProduc
     const isPlateSizeIndividual = plateSize === PlateSize.INDIVIDUAL;
 
     function handlePlateSize() {
-        isPlateSizeIndividual ? setPlateSize(PlateSize.THREE_PEOPLE) 
-            : setPlateSize(PlateSize.INDIVIDUAL);
+        isPlateSizeIndividual ? setPlateSize(PlateSize.THREE_PEOPLE) : setPlateSize(PlateSize.INDIVIDUAL);
     }
 
     return (
@@ -26,8 +25,8 @@ export default function ProductsList({ products, onSelectProduct, selectedProduc
                 </span>
                 <div className="relative inline-block w-10 mr-2 ml-2 align-middle">
                     <input type="checkbox" onChange={handlePlateSize} name="toggle" id="Blue"
-                        className={`${isPlateSizeIndividual ? "bg-primary-color right-4" : "bg-secondary-color right-0"} outline-none focus:outline-none 
-                     duration-200 ease-in absolute block w-6 h-6 rounded-full  border-4 appearance-none cursor-pointer`} />
+                        className={`${isPlateSizeIndividual ? "bg-primary-color right-4" : "bg-secondary-color right-0"} appearance-none
+                        outline-none focus:outline-none duration-200 ease-in absolute block w-6 h-6 rounded-full  border-4  cursor-pointer`} />
                     <label htmlFor="Blue" className="block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer">
                     </label>
                 </div>

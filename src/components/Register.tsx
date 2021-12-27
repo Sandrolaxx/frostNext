@@ -5,7 +5,7 @@ import { FiArrowRight } from "react-icons/fi";
 import logo from "../assets/icons/logoBlue.png";
 import { UserAddress, UserData } from "../types";
 import Button from "./Button";
-import { userRegister } from "./utils/restClient";
+import { userRegister } from "../utils/restClient";
 
 export default function Register() {
     const [name, setName] = useState("");

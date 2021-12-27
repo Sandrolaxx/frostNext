@@ -9,14 +9,14 @@ interface headerProps{
 
 export default function Header(props: headerProps) {
     const animate = props.animate;
-    
+
     return (
         <header className={`
             flex items-center justify-between 
             bg-primary-color h-20 animate-${animate ? "fade-down" : "none"}
-        `}>
-            <div className="p-20 pl-24 flex items-center">
-                <Link href="/">
+        `} >
+            <div className="p-20 pl-24 flex items-center" >
+                <Link href="/" >
                     <Image src={logo} alt="DonaFrost Logo" className="cursor-pointer"
                         width={45} height={45} quality={100} />
                 </Link>
