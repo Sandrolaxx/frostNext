@@ -14,14 +14,13 @@ export async function fetchProducts() {
 
     const token: string = await generateToken();
     const api = axios.create({baseURL: base_url_products});
-
+    
     return await api.get("/dona-frost/v1/product", {
         headers: {
             authorization: `Bearer ${token!}`,
         }
     })
-    .then(res => res.data)
-    .catch(console.log);
+    .then(res => res);
 
 }
 

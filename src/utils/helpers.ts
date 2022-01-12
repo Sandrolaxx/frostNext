@@ -1,4 +1,4 @@
-import { PlateCategory, Product } from "../types";
+import { PlateCategory, Product, UserData } from "../types";
 
 export function checkIsSelected(selectedProducts: Product[], product: Product) { 
   return selectedProducts.some(item => item.id === product.id);
@@ -66,4 +66,15 @@ export function returnInitialFromEnumPlateCategory(plateCategory: PlateCategory)
         case PlateCategory.VEGETARIAN:
             return "VT";
     }
+}
+
+export function validateUser(newUser: UserData): UserData {
+
+    if (newUser.address.numberAp != null
+            && newUser.address.numberAp.match("")) {
+        newUser.address.numberAp = null;
+    }
+
+    return newUser;
+
 }

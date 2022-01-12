@@ -42,7 +42,7 @@ export type UserData = {
     name: string;
     password: string;
     email: string;
-    whatsapp: string;
+    phone: string;
     document: string;
     address: UserAddress;
     active: boolean;
@@ -54,7 +54,9 @@ export type UserAddress = {
     district: string;
     street: string;
     number: string;
-    numberAp: string;
+    numberAp: string | null;
     active: boolean;
     main: boolean;
+    latitude: string;
+    longitude: string;
 }

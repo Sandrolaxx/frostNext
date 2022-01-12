@@ -5,25 +5,28 @@ import { FiArrowRight } from "react-icons/fi";
 import logo from "../assets/icons/logoBlue.png";
 import { UserAddress, UserData } from "../types";
 import Button from "./Button";
-import { userRegister } from "../utils/restClient";
+import { fetchLocalMapBox, userRegister } from "../utils/restClient";
+import { validateUser } from "../utils/helpers";
 
 export default function Register() {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [document, setDocument] = useState("");
-    const [whatsapp, setWhatsapp] = useState("");
+    const [phone, setPhone] = useState("");
     const [state, setState] = useState("");
     const [city, setCity] = useState("");
     const [district, setDistrict] = useState("");
     const [street, setStreet] = useState("");
     const [number, setNumber] = useState("");
     const [numberAp, setNumberAp] = useState("");
+    let longitude: any;
+    let latitude: any;
 
     const active = true;
     const main = true;
 
-    function handleRegister() {
+    async function handleRegister() {
 
         let address: UserAddress = {
             state,
@@ -33,23 +36,35 @@ export default function Register() {
             number,
             numberAp,
             active,
-            main
+            main,
+            latitude,
+            longitude
         }
 
         let newUser: UserData = {
             name,
             password,
             email,
-            whatsapp,
+            phone,
             document,
             address,
             active
         }
 
         try {
-            userRegister(newUser);
+            const responseAddres = await fetchLocalMapBox(street + ", " + number + "," + city);
 
+            newUser.address.latitude = responseAddres.data.features[0].center[1];
+            newUser.address.longitude = responseAddres.data.features[0].center[0];
+
+            newUser = validateUser(newUser);
+            const response: any = userRegister(newUser);
+
+            if (response == 201) {
+                alert("Show cadastrado!")
+            }
         } catch (err) {
+            console.log("Erru!")
             alert("Erro no cadastro, tente novamente!")
         }
     }
@@ -98,8 +113,8 @@ export default function Register() {
                         <input
                             className="max-h-10 p-4"
                             placeholder="WhatsApp"
-                            value={whatsapp}
-                            onChange={e => setWhatsapp(e.target.value)}
+                            value={phone}
+                            onChange={e => setPhone(e.target.value)}
                         />
                         <input
                             className="max-h-10 p-4"
@@ -151,11 +166,9 @@ export default function Register() {
                         />
                     </div>
 
-                    <Link href="/register">
-                        <Button color="secondary-color" width={96} height={12} >
-                            CADASTRE-SE
-                        </Button>
-                    </Link>
+                    <Button onClick={() => handleRegister()} color="secondary-color" width={96} height={12} >
+                        CADASTRE-SE
+                    </Button>
 
                     <Link href="/login">
                         <div className="flex flex-row cursor-pointer items-center mt-4">
