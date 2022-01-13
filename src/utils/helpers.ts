@@ -68,13 +68,30 @@ export function returnInitialFromEnumPlateCategory(plateCategory: PlateCategory)
     }
 }
 
-export function validateUser(newUser: UserData): UserData {
-
-    if (newUser.address.numberAp != null
-            && newUser.address.numberAp.match("")) {
-        newUser.address.numberAp = null;
+export function validateUser(newUser: UserData) {
+    
+    if (newUser.document == null || newUser.document.length == 0) {
+        return "Erro ao validar documento do usuário";
     }
 
-    return newUser;
+    if (newUser.document == null || newUser.document.length == 0) {
+        return "Erro ao validar documento do usuário";
+    }
+
+    if (newUser.document == null || newUser.document.length == 0) {
+        return "Erro ao validar documento do usuário";
+    }
+
+    if (newUser.document == null || newUser.document.length == 0) {
+        return "Erro ao validar documento do usuário";
+    }
+    
+    if (newUser.document == null || newUser.document.length == 0) {
+        return "Erro ao validar documento do usuário";
+    }
+    
+    if (newUser.document == null || newUser.document.length == 0) {
+        return "Erro ao validar documento do usuário";
+    }
 
 }

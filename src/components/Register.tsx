@@ -57,7 +57,12 @@ export default function Register() {
             newUser.address.latitude = responseAddres.data.features[0].center[1];
             newUser.address.longitude = responseAddres.data.features[0].center[0];
 
-            newUser = validateUser(newUser);
+            validateUser(newUser);
+            
+            if (newUser.address.numberAp != null
+                && newUser.address.numberAp.match("")) {
+                newUser.address.numberAp = null;
+            }
             const response: any = userRegister(newUser);
 
             if (response == 201) {
