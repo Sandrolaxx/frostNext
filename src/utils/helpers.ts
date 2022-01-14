@@ -70,28 +70,10 @@ export function returnInitialFromEnumPlateCategory(plateCategory: PlateCategory)
 
 export function validateUser(newUser: UserData) {
     
-    if (newUser.document == null || newUser.document.length == 0) {
-        return "Erro ao validar documento do usuário";
+    if (newUser.password == null || newUser.password.length == 0) {
+        return "Informe uma senha de mais de 6 dígitos por segurança.";
     }
 
-    if (newUser.document == null || newUser.document.length == 0) {
-        return "Erro ao validar documento do usuário";
-    }
-
-    if (newUser.document == null || newUser.document.length == 0) {
-        return "Erro ao validar documento do usuário";
-    }
-
-    if (newUser.document == null || newUser.document.length == 0) {
-        return "Erro ao validar documento do usuário";
-    }
-    
-    if (newUser.document == null || newUser.document.length == 0) {
-        return "Erro ao validar documento do usuário";
-    }
-    
-    if (newUser.document == null || newUser.document.length == 0) {
-        return "Erro ao validar documento do usuário";
-    }
+    return null;
 
 }

@@ -7,6 +7,7 @@ import { UserAddress, UserData } from "../types";
 import Button from "./Button";
 import { fetchLocalMapBox, userRegister } from "../utils/restClient";
 import { validateUser } from "../utils/helpers";
+import { toast } from "react-toastify";
 
 export default function Register() {
     const [name, setName] = useState("");
@@ -52,13 +53,18 @@ export default function Register() {
         }
 
         try {
+            let validationError = validateUser(newUser);
+
+            if(validationError != null) {
+                toast.error(validationError);
+                return;
+            }
+
             const responseAddres = await fetchLocalMapBox(street + ", " + number + "," + city);
 
             newUser.address.latitude = responseAddres.data.features[0].center[1];
             newUser.address.longitude = responseAddres.data.features[0].center[0];
 
-            validateUser(newUser);
-            
             if (newUser.address.numberAp != null
                 && newUser.address.numberAp.match("")) {
                 newUser.address.numberAp = null;
@@ -66,11 +72,10 @@ export default function Register() {
             const response: any = userRegister(newUser);
 
             if (response == 201) {
-                alert("Show cadastrado!")
+                toast.success("Cadastrado com sucesso!")
             }
         } catch (err) {
-            console.log("Erru!")
-            alert("Erro no cadastro, tente novamente!")
+            toast.error("Erro no cadastro, tente novamente!")
         }
     }
 
@@ -95,6 +100,7 @@ export default function Register() {
                             className="max-h-10 p-4"
                             placeholder="Nome"
                             value={name}
+                            required
                             onChange={e => setName(e.target.value)}
                         />
                         <input
@@ -102,6 +108,7 @@ export default function Register() {
                             placeholder="Senha"
                             value={password}
                             type="password"
+                            required
                             onChange={e => setPassword(e.target.value)}
                         />
                     </div>
@@ -111,6 +118,8 @@ export default function Register() {
                         type="email"
                         placeholder="E-mail"
                         value={email}
+                        autoComplete="email"
+                        required
                         onChange={e => setEmail(e.target.value)}
                     />
 
@@ -119,12 +128,14 @@ export default function Register() {
                             className="max-h-10 p-4"
                             placeholder="WhatsApp"
                             value={phone}
+                            required
                             onChange={e => setPhone(e.target.value)}
                         />
                         <input
                             className="max-h-10 p-4"
                             placeholder="CPF"
                             value={document}
+                            required
                             onChange={e => setDocument(e.target.value)}
                         />
                     </div>
@@ -134,18 +145,26 @@ export default function Register() {
                             className="max-h-10 w-36 p-4"
                             placeholder="Cidade"
                             value={city}
+                            required
                             onChange={e => setCity(e.target.value)}
                         />
                         <input
                             className="max-h-10 w-16 p-4"
-                            placeholder="UF"
                             value={state}
                             onChange={e => setState(e.target.value)}
+                            placeholder="UF"
+                            list="UF"
+                            required
                         />
+                        <datalist id="UF">
+                            <option>PR</option>
+                            <option>RS</option>
+                        </datalist>
                         <input
                             className="max-h-10 p-4"
                             placeholder="Bairro"
                             value={district}
+                            required
                             onChange={e => setDistrict(e.target.value)}
                         />
                     </div>
