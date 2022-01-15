@@ -60,7 +60,7 @@ export default function Login() {
                 </section>
             </div>
             <div>
-                <Link href="/sign">
+                <Link href="/register">
                     <div className="flex flex-row cursor-pointer items-center m-4">
                         <p>Não possui uma conta?</p>
                         <strong> Cadastre-se</strong>

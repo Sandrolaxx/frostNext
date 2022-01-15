@@ -68,10 +68,10 @@ export function returnInitialFromEnumPlateCategory(plateCategory: PlateCategory)
     }
 }
 
-export function validateUser(newUser: UserData) {
+export function validateUserData(newUser: UserData) {
     
-    if (newUser.password == null || newUser.password.length == 0) {
-        return "Informe uma senha de mais de 6 dígitos por segurança.";
+    if (newUser.password.length <= 5) {
+        return "Informe uma senha com mais de 6 dígitos por segurança.";
     }
 
     return null;

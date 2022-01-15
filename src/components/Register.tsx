@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import { toast } from "react-toastify";
 import logo from "../assets/icons/logoBlue.png";
 import { UserAddress, UserData } from "../types";
-import Button from "./Button";
+import { validateUserData } from "../utils/helpers";
 import { fetchLocalMapBox, userRegister } from "../utils/restClient";
-import { validateUser } from "../utils/helpers";
-import { toast } from "react-toastify";
+import Button from "./Button";
 
 export default function Register() {
     const [name, setName] = useState("");
@@ -52,30 +52,32 @@ export default function Register() {
             active
         }
 
-        try {
-            let validationError = validateUser(newUser);
+        let validationError = validateUserData(newUser);
 
-            if(validationError != null) {
-                toast.error(validationError);
-                return;
-            }
+        if (validationError != null) {
+            toast.error(validationError);
+            return;
+        }
 
-            const responseAddres = await fetchLocalMapBox(street + ", " + number + "," + city);
+        console.log("teste")
 
-            newUser.address.latitude = responseAddres.data.features[0].center[1];
-            newUser.address.longitude = responseAddres.data.features[0].center[0];
+        const responseAddres: any = await fetchLocalMapBox(street + ", " + number + "," + city)
+            .then(res => res)
+            .catch(() => toast.error("Erro no cadastro, não foi possível encontrar o seu endereço!"));
 
-            if (newUser.address.numberAp != null
-                && newUser.address.numberAp.match("")) {
-                newUser.address.numberAp = null;
-            }
-            const response: any = userRegister(newUser);
+        newUser.address.latitude = responseAddres.data.features[0].center[1];
+        newUser.address.longitude = responseAddres.data.features[0].center[0];
 
-            if (response == 201) {
-                toast.success("Cadastrado com sucesso!")
-            }
-        } catch (err) {
-            toast.error("Erro no cadastro, tente novamente!")
+        if (newUser.address.numberAp != null
+            && newUser.address.numberAp.match("")) {
+            newUser.address.numberAp = null;
+        }
+        const response: any = userRegister(newUser);
+
+        if (response == 201) {
+            toast.success("Cadastrado com sucesso!");
+        } else {
+            toast.error("Tente novamente! Ocorreu um erro ao realizar cadastro😓");
         }
     }
 
@@ -173,12 +175,14 @@ export default function Register() {
                         <input
                             className="max-h-10 w-56 p-4"
                             placeholder="Rua"
+                            required
                             value={street}
                             onChange={e => setStreet(e.target.value)}
                         />
                         <input
                             className="max-h-10 w-14 p-4"
                             placeholder="Nº"
+                            required
                             value={number}
                             onChange={e => setNumber(e.target.value)}
                         />
@@ -190,12 +194,12 @@ export default function Register() {
                         />
                     </div>
 
-                    <Button onClick={() => handleRegister()} color="secondary-color" width={96} height={12} >
+                    <Button color="secondary-color" width={96} height={12} >
                         CADASTRE-SE
                     </Button>
 
                     <Link href="/login">
-                        <div className="flex flex-row cursor-pointer items-center mt-4">
+                        <div className="flex flex-row cursor-pointer items-center mt-4 w-2/5">
                             <p>Já tenho cadastro</p>
                             <FiArrowRight size={20} color={"#4EA8DE"} />
                         </div>
