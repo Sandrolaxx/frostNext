@@ -2,8 +2,8 @@ import axios from 'axios';
 import { OrderPayload, Product, UserData } from '../types';
 
 const mapboxToken = process.env.NEXT_PUBLIC_KEY_MAPBOX;
-const username = process.env.NEXT_PUBLIC_QUARKUS_USERNAME;
-const password = process.env.NEXT_PUBLIC_QUARKUS_PASSWORD;
+const defaultUsername = process.env.NEXT_PUBLIC_QUARKUS_USERNAME;
+const defaultpassword = process.env.NEXT_PUBLIC_QUARKUS_PASSWORD;
 const auth = process.env.NEXT_PUBLIC_QUARKUS_AUTH;
 const url_authentication = process.env.NEXT_PUBLIC_QUARKUS_AUTHENTICATION;
 const base_url_products = process.env.NEXT_PUBLIC_QUARKUS_BASE_PRODUCTS;
@@ -11,8 +11,8 @@ const base_url_user = process.env.NEXT_PUBLIC_QUARKUS_BASE_USER;
 const base_url_marketplace = process.env.NEXT_PUBLIC_QUARKUS_BASE_MARKETPLACE;
 
 export async function fetchProducts() {
-
-    const token: string = await generateToken();
+    
+    const token: string = await generateToken(defaultUsername!, defaultpassword!);
     const api = axios.create({baseURL: base_url_products});
     
     return await api.get("/dona-frost/v1/product", {
@@ -33,7 +33,8 @@ export function saveOrder(payload: OrderPayload) {
 }
 
 export async function userRegister(newUser: UserData) {
-    const token = await generateToken();
+    
+    const token: string = await generateToken(defaultUsername!, defaultpassword!);
     const api = axios.create({baseURL: base_url_user});
     
     console.log(newUser);
@@ -45,14 +46,15 @@ export async function userRegister(newUser: UserData) {
     })
     .then(res => res.status)
     .catch(console.log);
+    
 }
 
-async function generateToken() {
+export async function generateToken(username: string, password: string) {
 
     const qs = require("querystring");
     const api = axios.create({baseURL: url_authentication});
 
-    let token: string | any;
+    let token: string;
 
     await api.post('/openid-connect/token',
         qs.stringify({
@@ -68,8 +70,34 @@ async function generateToken() {
         withCredentials: false,
     })
     .then(res => token = res.data.access_token)
-    .catch(console.log);
+    .catch(() => token = "Erro ao gerar token de autenticação! Tente novamente.");
 
-    return token;
+    return token!;
+
+}
+
+async function generateTokenWithRefresh(refreshToken: string) {
+
+    const qs = require("querystring");
+    const api = axios.create({baseURL: url_authentication});
+
+    let token: string;
+
+    await api.post('/openid-connect/token',
+        qs.stringify({
+            grant_type: 'refresh_token',
+            refresh_token: refreshToken,
+
+        }), {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            authorization: `Basic ${auth}`,
+        },
+        withCredentials: false,
+    })
+    .then(res => token = res.data.access_token)
+    .catch(() => token = "Erro ao gerar token de autenticação! Tente novamente.");
+
+    return token!;
 
 }

@@ -59,8 +59,6 @@ export default function Register() {
             return;
         }
 
-        console.log("teste")
-
         const responseAddres: any = await fetchLocalMapBox(street + ", " + number + "," + city)
             .then(res => res)
             .catch(() => toast.error("Erro no cadastro, não foi possível encontrar o seu endereço!"));
@@ -82,8 +80,8 @@ export default function Register() {
     }
 
     return (
-        <div className="flex items-center m-auto bg-secondary-light-color rounded-xl shadow-2xl animate-fade-in">
-            <div className="flex space-x-16 items-center w-full p-8">
+        <div className="flex items-center m-auto bg-secondary-light-color rounded-xl shadow-2xl animate-fade-in w-1/2 h-2/4">
+            <div className="flex space-x-16 items-center p-8">
                 <section className="max-w-sm items-center text-center" >
                     <Image src={logo} alt="DonaFrost Logo" className="cursor-pointer"
                         width={160} height={160} quality={100} />
