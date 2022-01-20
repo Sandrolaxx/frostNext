@@ -50,6 +50,10 @@ O protótipo foi feito utilizando a ferramenta Figma e é possível visualizar o
 
 Essa aplicação faz parte do conjunto de aplicações que juntas dão vida ao projeto DonaFrost, essa aplicação que está vendo agora se trata do front-end em NextJS, sendo um cliente que consome os microsserviços do back-end.
 
+Você pode encontrar as outras aplicações em:
+
+[Microservices](https://github.com/Sandrolaxx/dfmicroservices) e [App do Entregador](https://github.com/Sandrolaxx/DFmobileDeliveryman)
+
 Abaixo diagrama das aplicações em conjunto: 
 
 ![diagrama](https://user-images.githubusercontent.com/61207420/150238760-bbf5ac95-a4ab-4443-b431-28e6f7c25e77.png)
