@@ -16,7 +16,7 @@ O protótipo foi feito utilizando a ferramenta Figma e é possível visualizar o
 * ⚛️ Framework React - [Next.js](https://nextjs.org/)
 * ✨ Animações - [Lottie](https://lottiefiles.com/)
 * 🗺 Mapas - [Mapbox](https://www.mapbox.com/maps/) e [Leaflet](https://leafletjs.com/)
-* 📞Chamadas - [Axios](https://axios-http.com/)
+* 📞 Chamadas - [Axios](https://axios-http.com/)
 
 ---
 
