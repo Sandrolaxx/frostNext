@@ -12,8 +12,9 @@ O protótipo foi feito utilizando a ferramenta Figma e é possível visualizar o
 
 ## 🤓 Tecnologias utilizadas
 
-* 🌬 Framework CSS - [TailWind](https://tailwindcss.com/)
+* 🔤 Lang - [TypeScript](https://www.typescriptlang.org/)
 * ⚛️ Framework React - [Next.js](https://nextjs.org/)
+* 🌬 Framework CSS - [TailWind](https://tailwindcss.com/)
 * ✨ Animações - [Lottie](https://lottiefiles.com/)
 * 🗺 Mapas - [Mapbox](https://www.mapbox.com/maps/) e [Leaflet](https://leafletjs.com/)
 * 📞 Chamadas - [Axios](https://axios-http.com/)
@@ -62,7 +63,15 @@ Abaixo diagrama das aplicações em conjunto:
 
 ## 🧑‍💻 Como iniciar a aplicação
 
-Primeiro vamos executar o servidor de desenvolvimento:
+Primeiro vamos baixar todas as dependências do projeto:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Agora vamos executar o servidor de desenvolvimento:
 
 ```bash
 npm run dev
