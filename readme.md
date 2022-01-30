@@ -92,3 +92,9 @@ Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o
 * Implementar forma de pagamento Pix com geração do QR Code ao finalizar pedido.
 
 Caso queira me ajudar com o projeto ficarei muito feliz em aceitar seu pull request 🙂. 
+
+--
+
+## 📃 Licença
+
+Este projeto está sobre a licença [Apache 2.0](LICENSE).
