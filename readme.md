@@ -93,7 +93,7 @@ Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o
 
 Caso queira me ajudar com o projeto ficarei muito feliz em aceitar seu pull request 🙂. 
 
---
+---
 
 ## 📃 Licença
 
